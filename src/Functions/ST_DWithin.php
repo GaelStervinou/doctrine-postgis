@@ -34,7 +34,7 @@ final class ST_DWithin extends FunctionNode
         $lexer = $parser->getLexer();
 
         /** @psalm-suppress DeprecatedMethod */
-        $nextType = $lexer->lookahead['type'] ?? $lexer->lookahead->type ?? null;
+        $nextType =  $lexer->lookahead->type ?? null;
 
         if (Lexer::T_COMMA === $nextType) {
             $parser->match(Lexer::T_COMMA);
